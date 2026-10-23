@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Stevie Ray Web Design — websites for local businesses in Conroe, TX. $400 flat, free mockup first. You see it before you pay." />
+    <link rel="icon" href="data:," />
+    <title>Stevie Ray Web Design — Websites for Local Businesses · $400 Flat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;700;800;900&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #faf6ee;
+        --surface: #ffffff;
+        --surface-2: #f2ecdf;
+        --ink: #1d2421;
+        --ink-soft: #4c5851;
+        --ink-faint: #77837b;
+        --accent: #b8481c;
+        --accent-strong: #9c3a13;
+        --accent-soft: #f7e3d7;
+        --green: #2e5a43;
+        --green-soft: #e2ede4;
+        --line: #e0d8c6;
+        --band: #1e2a24;
+        --band-ink: #f3efe4;
+        --band-soft: #b9c6bc;
+        --gold: #d99a2b;
+        --shadow: 0 18px 40px -18px rgba(29, 36, 33, 0.35);
+        --radius: 14px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #121614;
+          --surface: #1b211e;
+          --surface-2: #222a26;
+          --ink: #f0ebdf;
+          --ink-soft: #b3beb4;
+          --ink-faint: #8a968c;
+          --accent: #e07c46;
+          --accent-strong: #eda06d;
+          --accent-soft: #3a2a20;
+          --green: #8fc39e;
+          --green-soft: #22342a;
+          --line: #2e3833;
+          --band: #0c100e;
+          --band-ink: #f3efe4;
+          --band-soft: #a7b6aa;
+          --gold: #e0aa45;
+          --shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.7);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        * { transition: none !important; }
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Public Sans", system-ui, -apple-system, sans-serif;
+        font-size: 17px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1, h2, h3 { font-family: "Libre Franklin", "Public Sans", sans-serif; line-height: 1.12; margin: 0; }
+      p { margin: 0; }
+      a { color: var(--accent); }
+      :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+      .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+      /* ---------- header ---------- */
+      header.site {
+        position: sticky; top: 0; z-index: 40;
+        background: color-mix(in srgb, var(--bg) 88%, transparent);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+      .site-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; }
+      .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+      .brand-mark {
+        width: 40px; height: 40px; flex: none;
+        background: var(--green); color: #f3efe4;
+        font-family: "Libre Franklin", sans-serif; font-weight: 900; font-size: 17px;
+        display: grid; place-items: center; border-radius: 9px; letter-spacing: 0.5px;
+      }
+      .brand-name { font-family: "Libre Franklin", sans-serif; font-weight: 800; font-size: 17px; line-height: 1.15; }
+      .brand-sub { font-size: 12.5px; color: var(--ink-faint); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+      .site-nav { display: flex; align-items: center; gap: 22px; }
+      .site-nav a.navlink { color: var(--ink-soft); text-decoration: none; font-weight: 600; font-size: 15px; }
+      .site-nav a.navlink:hover { color: var(--ink); }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        background: var(--accent); color: #fff;
+        font-family: "Public Sans", sans-serif; font-weight: 700; font-size: 16px;
+        padding: 13px 22px; border-radius: 10px; border: 0; cursor: pointer;
+        text-decoration: none; transition: background 0.15s ease, transform 0.15s ease;
+      }
+      .btn:hover { background: var(--accent-strong); }
+      .btn.small { padding: 10px 16px; font-size: 14.5px; }
+      .btn.ghost {
+        background: transparent; color: var(--ink);
+        border: 1.5px solid var(--line);
+      }
+      .btn.ghost:hover { border-color: var(--ink-faint); background: var(--surface); }
+
+      /* ---------- hero ---------- */
+      .hero { padding: 56px 0 30px; }
+      .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center; }
+      .hero h1 { font-size: clamp(38px, 5.4vw, 62px); font-weight: 900; letter-spacing: -0.015em; }
+      .hero h1 .flat { color: var(--accent); white-space: nowrap; }
+      .hero .lede { margin-top: 20px; font-size: 19px; color: var(--ink-soft); max-width: 34em; }
+      .hero .lede strong { color: var(--ink); }
+      .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+      .hero-note { margin-top: 16px; font-size: 14.5px; color: var(--ink-faint); font-weight: 500; }
+
+      /* phone mockup */
+      .mock-side { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+      .phone {
+        width: min(320px, 86vw);
+        background: var(--surface);
+        border: 10px solid #20261f;
+        border-radius: 38px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+      @media (prefers-color-scheme: dark) { .phone { border-color: #3a443d; } }
+      .phone-notch { height: 22px; display: grid; place-items: center; background: var(--surface); }
+      .phone-notch i { width: 74px; height: 6px; border-radius: 3px; background: var(--line); display: block; }
+      .mock-top { background: #274b38; color: #f3efe4; padding: 14px 16px 12px; display: flex; justify-content: space-between; align-items: center; }
+      .mock-top .mt-name { font-family: "Libre Franklin", sans-serif; font-weight: 800; font-size: 14px; line-height: 1.2; }
+      .mock-top .mt-sub { font-size: 10.5px; opacity: 0.8; }
+      .mock-call { background: #d99a2b; color: #221a08; font-weight: 800; font-size: 11px; padding: 6px 10px; border-radius: 999px; white-space: nowrap; }
+      .mock-hero { padding: 18px 16px 6px; }
+      .mock-hero h4 { font-family: "Libre Franklin", sans-serif; font-size: 21px; line-height: 1.2; margin: 0 0 8px; }
+      .mock-hero p { font-size: 12.5px; color: var(--ink-soft); }
+      .mock-stars { color: var(--gold); font-size: 13px; letter-spacing: 2px; margin-top: 10px; }
+      .mock-stars span { color: var(--ink-faint); letter-spacing: 0; font-size: 11px; margin-left: 4px; }
+      .mock-btn { margin: 14px 16px 0; background: #b8481c; color: #fff; text-align: center; font-weight: 700; font-size: 13.5px; padding: 11px; border-radius: 9px; }
+      .mock-services { padding: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+      .mock-services div { background: var(--surface-2); border-radius: 8px; padding: 9px 10px; font-size: 12px; font-weight: 600; }
+      .mock-foot { padding: 0 16px 18px; font-size: 11px; color: var(--ink-faint); }
+      .mock-caption { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--ink-faint); text-align: center; }
+
+      /* proof strip */
+      .proof { margin-top: 54px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+      .proof-cell { padding: 22px 18px; text-align: center; }
+      .proof-cell + .proof-cell { border-left: 1px solid var(--line); }
+      .proof-num { font-family: "Libre Franklin", sans-serif; font-weight: 900; font-size: clamp(26px, 3.6vw, 40px); line-height: 1.05; }
+      .proof-cell.mine .proof-num { color: var(--accent); }
+      .proof-lab { margin-top: 6px; font-size: 13.5px; color: var(--ink-soft); font-weight: 600; }
+
+      /* ---------- sections ---------- */
+      section.block { padding: 64px 0 8px; }
+      .sec-head { max-width: 44em; }
+      .sec-head h2 { font-size: clamp(28px, 3.6vw, 40px); font-weight: 800; letter-spacing: -0.01em; }
+      .sec-head p { margin-top: 12px; color: var(--ink-soft); font-size: 17.5px; }
+
+      /* steps */
+      .steps { margin-top: 36px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+      .step { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 20px; }
+      .step-num { font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 13px; color: var(--accent); letter-spacing: 0.08em; }
+      .step h3 { font-size: 19px; font-weight: 800; margin: 10px 0 8px; }
+      .step p { font-size: 15px; color: var(--ink-soft); }
+      .step p strong { color: var(--ink); }
+
+      /* comparison */
+      .compare { margin-top: 36px; display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: 16px; align-items: stretch; }
+      .col-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 22px; background: var(--surface); }
+      .col-card h3 { font-size: 18px; font-weight: 800; }
+      .col-price { font-family: "Libre Franklin", sans-serif; font-weight: 900; font-size: 30px; margin: 10px 0 4px; }
+      .col-card ul { margin: 14px 0 0; padding: 0; list-style: none; }
+      .col-card li { font-size: 15px; color: var(--ink-soft); padding: 7px 0 7px 24px; position: relative; border-top: 1px dashed var(--line); }
+      .col-card li:first-child { border-top: 0; }
+      .col-card li::before { content: "—"; position: absolute; left: 2px; color: var(--ink-faint); }
+      .col-card.mine { background: var(--band); color: var(--band-ink); border-color: var(--band); box-shadow: var(--shadow); }
+      .col-card.mine .col-price { color: var(--gold); }
+      .col-card.mine li { color: var(--band-soft); border-color: rgba(243, 239, 228, 0.16); }
+      .col-card.mine li::before { content: "✓"; color: var(--gold); font-weight: 700; }
+
+      /* pricing */
+      .price-grid { margin-top: 36px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 16px; align-items: start; }
+      .build-card { background: var(--surface); border: 2px solid var(--green); border-radius: var(--radius); padding: 28px; }
+      .build-card .bc-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+      .build-card h3 { font-size: 22px; font-weight: 800; }
+      .build-price { font-family: "Libre Franklin", sans-serif; font-weight: 900; font-size: 44px; line-height: 1; }
+      .build-price small { font-size: 15px; font-weight: 700; color: var(--ink-soft); font-family: "Public Sans", sans-serif; }
+      .build-split { margin-top: 6px; font-family: "IBM Plex Mono", monospace; font-size: 13.5px; color: var(--accent); font-weight: 600; }
+      .build-card ul { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px; }
+      .build-card li { font-size: 15.5px; padding: 7px 0 7px 26px; position: relative; }
+      .build-card li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800; }
+      .extras { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 24px 10px; }
+      .extras h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+      .extras .ex-note { font-size: 14px; color: var(--ink-faint); }
+      .ex-row { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 13px 0; border-bottom: 1px dashed var(--line); }
+      .ex-row:last-child { border-bottom: 0; }
+      .ex-name { font-weight: 700; font-size: 15.5px; }
+      .ex-desc { font-size: 13.5px; color: var(--ink-soft); }
+      .ex-price { font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 14.5px; white-space: nowrap; color: var(--accent); }
+
+      /* band */
+      .band { margin-top: 64px; background: var(--band); color: var(--band-ink); }
+      .band-in { padding: 44px 0; display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; }
+      .band .big-quote { font-family: "Libre Franklin", sans-serif; font-weight: 800; font-size: clamp(21px, 3vw, 29px); line-height: 1.3; max-width: 26em; }
+      .band p { color: var(--band-soft); margin-top: 10px; max-width: 40em; }
+      .band-badge {
+        font-family: "IBM Plex Mono", monospace; font-size: 12.5px; font-weight: 600; letter-spacing: 0.06em;
+        border: 1.5px solid var(--gold); color: var(--gold); border-radius: 999px; padding: 8px 14px; white-space: nowrap;
+      }
+
+      /* trades */
+      .trades { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 10px; }
+      .trade-chip {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
+        padding: 9px 16px; font-weight: 600; font-size: 15px;
+      }
+      .trade-chip span { color: var(--ink-faint); font-weight: 500; }
+
+      /* faq */
+      .faq-list { margin-top: 32px; border-top: 1px solid var(--line); }
+      details.faq { border-bottom: 1px solid var(--line); }
+      details.faq summary {
+        cursor: pointer; list-style: none; padding: 20px 34px 20px 2px; position: relative;
+        font-family: "Libre Franklin", sans-serif; font-weight: 700; font-size: 18px;
+      }
+      details.faq summary::-webkit-details-marker { display: none; }
+      details.faq summary::after {
+        content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+        font-size: 24px; font-weight: 500; color: var(--accent);
+      }
+      details.faq[open ] summary::after { content: "–"; }
+      details.faq .faq-body { padding: 0 2px 22px; color: var(--ink-soft); max-width: 46em; font-size: 16px; }
+      details.faq .faq-body strong { color: var(--ink); }
+
+      /* request form */
+      .request { margin-top: 64px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; }
+      .request-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; }
+      .request-side { background: var(--green-soft); padding: 34px 30px; }
+      .request-side h2 { font-size: 28px; font-weight: 800; }
+      .request-side p { margin-top: 12px; color: var(--ink-soft); font-size: 16px; }
+      .request-side ul { list-style: none; margin: 20px 0 0; padding: 0; }
+      .request-side li { padding: 6px 0 6px 26px; position: relative; font-size: 15.5px; font-weight: 600; }
+      .request-side li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800; }
+      .request-form { padding: 34px 30px; }
+      .field { margin-bottom: 16px; }
+      .field label { display: block; font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+      .field input, .field select, .field textarea {
+        width: 100%; font: inherit; font-size: 16px; color: var(--ink);
+        background: var(--bg); border: 1.5px solid var(--line); border-radius: 9px; padding: 11px 12px;
+      }
+      .field textarea { min-height: 74px; resize: vertical; }
+      .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); outline: none; }
+      .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      .msg-out { margin-top: 18px; display: none; }
+      .msg-out.show { display: block; }
+      .msg-out label { display: block; font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+      .msg-out textarea {
+        width: 100%; font: inherit; font-size: 14.5px; color: var(--ink);
+        background: var(--surface-2); border: 1.5px dashed var(--ink-faint); border-radius: 9px; padding: 12px; min-height: 110px;
+      }
+      .copy-row { display: flex; align-items: center; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+      .copy-ok { font-size: 14px; font-weight: 700; color: var(--green); display: none; }
+      .copy-ok.show { display: inline; }
+      .form-hint { margin-top: 14px; font-size: 13.5px; color: var(--ink-faint); }
+
+      /* footer */
+      footer.site { margin-top: 72px; border-top: 1px solid var(--line); padding: 34px 0 96px; }
+      .foot-grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; align-items: flex-start; }
+      .foot-brand { font-family: "Libre Franklin", sans-serif; font-weight: 800; font-size: 18px; }
+      .foot-meta { color: var(--ink-soft); font-size: 14.5px; margin-top: 6px; }
+      .foot-hours { font-family: "IBM Plex Mono", monospace; font-size: 13.5px; color: var(--ink-soft); text-align: right; }
+
+      /* sticky mobile bar */
+      .sticky-bar {
+        display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+        background: var(--band); color: var(--band-ink);
+        padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+        align-items: center; justify-content: space-between; gap: 12px;
+        box-shadow: 0 -8px 24px rgba(0,0,0,0.25);
+      }
+      .sticky-bar .sb-text { font-size: 13.5px; line-height: 1.35; font-weight: 600; }
+      .sticky-bar .sb-text strong { display: block; font-size: 15px; }
+      .sticky-bar .btn { flex: none; padding: 11px 16px; font-size: 14.5px; }
+
+      /* ---------- responsive ---------- */
+      @media (max-width: 920px) {
+        .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+        .steps { grid-template-columns: 1fr 1fr; }
+        .compare { grid-template-columns: 1fr; }
+        .price-grid { grid-template-columns: 1fr; }
+        .request-grid { grid-template-columns: 1fr; }
+        .band-in { grid-template-columns: 1fr; gap: 14px; }
+        .band-badge { justify-self: start; }
+      }
+      @media (max-width: 640px) {
+        body { font-size: 16px; }
+        .site-nav a.navlink { display: none; }
+        .hero { padding-top: 38px; }
+        .proof-grid { grid-template-columns: 1fr; }
+        .proof-cell { padding: 16px 10px; }
+        .proof-cell + .proof-cell { border-left: 0; border-top: 1px solid var(--line); }
+        .steps { grid-template-columns: 1fr; }
+        .build-card ul { grid-template-columns: 1fr; }
+        .form-row { grid-template-columns: 1fr; }
+        .foot-hours { text-align: left; }
+        .sticky-bar { display: flex; }
+        footer.site { padding-bottom: 110px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap site-bar">
+        <a class="brand" href="#top" aria-label="Stevie Ray Web Design — home">
+          <span class="brand-mark">SR</span>
+          <span>
+            <span class="brand-name">Stevie Ray Web Design</span><br />
+            <span class="brand-sub">Conroe, Texas</span>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Page sections">
+          <a class="navlink" href="#how">How it works</a>
+          <a class="navlink" href="#pricing">Pricing</a>
+          <a class="navlink" href="#faq">FAQ</a>
+          <a class="btn small" href="#request">Get my free mockup</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- ============ HERO ============ -->
+      <div class="wrap hero">
+        <div class="hero-grid">
+          <div>
+            <h1>Your shop needs a website. Mine costs <span class="flat">$400 flat</span> — and you see it before you pay.</h1>
+            <p class="lede">I'm Stevie, a web designer in Conroe. If your business doesn't have a website — or has one that isn't bringing in calls — <strong>I'll build you a free homepage mockup first.</strong> Like it, and I'll build the full site for $400 flat. Don't like it, it cost you nothing.</p>
+            <div class="hero-ctas">
+              <a class="btn" href="#request">Get my free mockup</a>
+              <a class="btn ghost" href="#how">See how it works</a>
+            </div>
+            <p class="hero-note">No contracts. No hosting lock-in. You own everything.</p>
+          </div>
+          <div class="mock-side" aria-hidden="true">
+            <div class="phone">
+              <div class="phone-notch"><i></i></div>
+              <div class="mock-top">
+                <div>
+                  <div class="mt-name">Lone Star Plumbing Co.</div>
+                  <div class="mt-sub">Conroe · Montgomery · The Woodlands</div>
+                </div>
+                <div class="mock-call">Tap to Call</div>
+              </div>
+              <div class="mock-hero">
+                <h4>Plumbing problems? Fixed today.</h4>
+                <p>Licensed local plumbers. Upfront pricing, same-day service, no overtime games.</p>
+                <div class="mock-stars">★★★★★<span>4.9 · 212 Google reviews</span></div>
+              </div>
+              <div class="mock-btn">Call (936) 555-0148</div>
+              <div class="mock-services">
+                <div>Water heaters</div>
+                <div>Drain cleaning</div>
+                <div>Leak repair</div>
+                <div>Remodels</div>
+              </div>
+              <div class="mock-foot">Open Mon–Sat · Emergency calls welcome</div>
+            </div>
+            <p class="mock-caption">↑ A mockup like this one is what lands in your texts — free.</p>
+          </div>
+        </div>
+
+        <div class="proof" role="group" aria-label="Price comparison">
+          <div class="proof-grid">
+            <div class="proof-cell">
+              <div class="proof-num">$5,000+</div>
+              <div class="proof-lab">What agencies charge for a small-business site</div>
+            </div>
+            <div class="proof-cell">
+              <div class="proof-num">$0*</div>
+              <div class="proof-lab">What "free website" companies charge — then make back on hosting deals &amp; upsells</div>
+            </div>
+            <div class="proof-cell mine">
+              <div class="proof-num">$400 flat</div>
+              <div class="proof-lab">What I charge. $200 to start, $200 at launch. That's the whole price.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ HOW IT WORKS ============ -->
+      <section class="block" id="how">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>How it works</h2>
+            <p>No application committee, no sales call, no guessing what happens next. Four steps, and the first one is free.</p>
+          </div>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">STEP 01</div>
+              <h3>Free mockup</h3>
+              <p>I build your homepage concept first. <strong>You see it before you pay anything</strong> — usually right in a text message.</p>
+            </div>
+            <div class="step">
+              <div class="step-num">STEP 02</div>
+              <h3>$200 deposit</h3>
+              <p>Like what you see? <strong>$200 starts the build.</strong> The other $200 isn't due until launch — $400 total, flat.</p>
+            </div>
+            <div class="step">
+              <div class="step-num">STEP 03</div>
+              <h3>The build</h3>
+              <p>Full 5-page site — Home, Services, About, Reviews, Contact — done in <strong>about 7 days</strong> once you send your logo, photos, and service list.</p>
+            </div>
+            <div class="step">
+              <div class="step-num">STEP 04</div>
+              <h3>Launch &amp; handover</h3>
+              <p>Your site goes live, I walk you through it, and you've got <strong>30 days of fixes on me</strong> after launch.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WHY $400 ============ -->
+      <section class="block" id="why">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>Why $400 — and why not "free"?</h2>
+            <p>Agencies charge $5,000 or more. The "free website" outfits make it back on hosting lock-ins and upsell ladders. I'm neither — here's the honest math on all three.</p>
+          </div>
+          <div class="compare">
+            <div class="col-card">
+              <h3>Agencies</h3>
+              <div class="col-price">$5,000+</div>
+              <ul>
+                <li>You're paying for their office, sales team, and account managers</li>
+                <li>Weeks of meetings before you see a single page</li>
+                <li>Built for their portfolio as much as for your phone ringing</li>
+              </ul>
+            </div>
+            <div class="col-card">
+              <h3>"Free" website companies</h3>
+              <div class="col-price">$0*</div>
+              <ul>
+                <li>The site is free — the hosting deal you must sign up for is where they get paid</li>
+                <li>Application processes and waitlists; a template with your name dropped in</li>
+                <li>The real money is the upsell ladder waiting after launch</li>
+              </ul>
+            </div>
+            <div class="col-card mine">
+              <h3>Stevie Ray Web Design</h3>
+              <div class="col-price">$400 flat</div>
+              <ul>
+                <li>Free mockup first — you see your site before a dollar moves</li>
+                <li>One guy in Conroe, no overhead — that's why it's $400 and not $5,000</li>
+                <li>Your domain, your site, free hosting — no lock-in, ever</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PRICING ============ -->
+      <section class="block" id="pricing">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>Pricing, all of it, up front</h2>
+            <p>The price on this page is the price. The only other cost is your domain name — about $12 a year, bought in your name so it's yours.</p>
+          </div>
+          <div class="price-grid">
+            <div class="build-card">
+              <div class="bc-top">
+                <h3>Website build</h3>
+                <div class="build-price">$400 <small>flat</small></div>
+              </div>
+              <div class="build-split">$200 DEPOSIT TO START · $200 AT LAUNCH</div>
+              <ul>
+                <li>5 pages: Home, Services, About, Reviews, Contact</li>
+                <li>Free homepage mockup before you pay</li>
+                <li>Contact form included</li>
+                <li>Built to turn visitors into phone calls</li>
+                <li>About 7-day turnaround</li>
+                <li>2 rounds of revisions included</li>
+                <li>Free hosting</li>
+                <li>30 days of fixes after launch</li>
+              </ul>
+            </div>
+            <div class="extras">
+              <h3>Extras, if you want them</h3>
+              <p class="ex-note">Optional. Your site works fine without every one of these.</p>
+              <div class="ex-row">
+                <div>
+                  <div class="ex-name">Review-Getter</div>
+                  <div class="ex-desc">Review card + QR code + Google listing polish, so happy customers actually leave reviews</div>
+                </div>
+                <div class="ex-price">$200</div>
+              </div>
+              <div class="ex-row">
+                <div>
+                  <div class="ex-name">Missed-Call Text-Back</div>
+                  <div class="ex-desc">Miss a call, the customer instantly gets a text — so the job doesn't go to the next shop on Google</div>
+                </div>
+                <div class="ex-price">$500 + $147/mo</div>
+              </div>
+              <div class="ex-row">
+                <div>
+                  <div class="ex-name">Care plan</div>
+                  <div class="ex-desc">Updates and upkeep handled for you after your 30 days of free fixes</div>
+                </div>
+                <div class="ex-price">$97/mo</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ LIMITED SLOTS BAND ============ -->
+      <div class="band">
+        <div class="wrap band-in">
+          <div class="band-badge">ONE-MAN SHOP</div>
+          <div>
+            <p class="big-quote">"I only take on a few builds at a time — I'd rather do a few sites right than a bunch halfway."</p>
+            <p>I'm a dad in Conroe who builds sites from home. If I can't get to yours this round, I'll tell you straight — and the mockup is still free either way.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ TRADES ============ -->
+      <section class="block" id="trades">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>Built for shops that run on phone calls</h2>
+            <p>If your customers find you on Google and call the first number that looks trustworthy, your website has one job: make that call happen.</p>
+          </div>
+          <div class="trades">
+            <span class="trade-chip">Plumbers</span>
+            <span class="trade-chip">Roofers</span>
+            <span class="trade-chip">HVAC</span>
+            <span class="trade-chip">Electricians</span>
+            <span class="trade-chip">Auto repair <span>&amp; mobile mechanics</span></span>
+            <span class="trade-chip">Tree &amp; lawn care</span>
+            <span class="trade-chip">Fence &amp; landscaping</span>
+            <span class="trade-chip">Pest control</span>
+            <span class="trade-chip">Appliance repair</span>
+            <span class="trade-chip">Remodelers</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FAQ ============ -->
+      <section class="block" id="faq">
+        <div class="wrap">
+          <div class="sec-head">
+            <h2>Straight answers</h2>
+            <p>The questions every shop owner asks before they'd ever text back — answered here so you don't have to ask.</p>
+          </div>
+          <div class="faq-list">
+            <details class="faq" open>
+              <summary>Why only $400 when agencies charge thousands?</summary>
+              <div class="faq-body">I'm one guy working from home in Conroe — no office, no sales team, no account managers. The free mockup does my selling. <strong>Agencies charge for their overhead; I don't have any.</strong></div>
+            </details>
+            <details class="faq">
+              <summary>What's the catch?</summary>
+              <div class="faq-body">There isn't one. $400 flat: $200 to start, $200 at launch. The only other cost is your domain name — about $12 a year, and you buy it so it's yours.</div>
+            </details>
+            <details class="faq">
+              <summary>How long does it take?</summary>
+              <div class="faq-body">About <strong>7 days</strong> from your deposit and getting me your logo, photos, and service list.</div>
+            </details>
+            <details class="faq">
+              <summary>Do I own my website?</summary>
+              <div class="faq-body"><strong>100%.</strong> Your domain, your site. I don't hold anything hostage — that's the whole point of doing it this way.</div>
+            </details>
+            <details class="faq">
+              <summary>Can I update it myself?</summary>
+              <div class="faq-body">Yes. I'll show you how to change text and photos, and I'm around if you get stuck.</div>
+            </details>
+            <details class="faq">
+              <summary>What if I don't like the mockup?</summary>
+              <div class="faq-body">Then we shake hands and it cost you nothing. <strong>The mockup is free either way.</strong></div>
+            </details>
+            <details class="faq">
+              <summary>What happens after launch?</summary>
+              <div class="faq-body">30 days of fixes are included. After that, an optional care plan ($97/mo) covers updates and upkeep — or don't take it, your call.</div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ REQUEST ============ -->
+      <div class="wrap">
+        <div class="request" id="request">
+          <div class="request-grid">
+            <div class="request-side">
+              <h2>See your mockup — free</h2>
+              <p>Tell me about your shop and I'll build your homepage concept. No payment, no obligation, no sales call.</p>
+              <ul>
+                <li>Free homepage mockup</li>
+                <li>$400 flat if you love it</li>
+                <li>No obligation if it's not for you</li>
+              </ul>
+            </div>
+            <form class="request-form" id="mockupForm" novalidate>
+              <div class="form-row">
+                <div class="field">
+                  <label for="f-biz">Business name</label>
+                  <input id="f-biz" name="biz" type="text" placeholder="e.g. Due South Plumbing" autocomplete="organization" />
+                </div>
+                <div class="field">
+                  <label for="f-trade">Type of business</label>
+                  <select id="f-trade" name="trade">
+                    <option value="">Pick one…</option>
+                    <option>Plumbing</option>
+                    <option>Roofing</option>
+                    <option>HVAC</option>
+                    <option>Electrical</option>
+                    <option>Auto repair / mobile mechanic</option>
+                    <option>Tree &amp; lawn care</option>
+                    <option>Fence &amp; landscaping</option>
+                    <option>Pest control</option>
+                    <option>Appliance repair</option>
+                    <option>Remodeling</option>
+                    <option>Something else</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="f-city">City</label>
+                  <input id="f-city" name="city" type="text" placeholder="e.g. Conroe" autocomplete="address-level2" />
+                </div>
+                <div class="field">
+                  <label for="f-site">Current website, if any</label>
+                  <input id="f-site" name="site" type="text" placeholder="None / facebook page / old site" />
+                </div>
+              </div>
+              <div class="field">
+                <label for="f-notes">Anything I should know? <span style="color:var(--ink-faint);font-weight:500">(optional)</span></label>
+                <textarea id="f-notes" name="notes" placeholder="Services you want featured, colors you like, shops whose sites you like…"></textarea>
+              </div>
+              <button class="btn" type="submit" style="width:100%">Build my request message</button>
+              <div class="msg-out" id="msgOut">
+                <label for="msgText">Your message — copy it and send it to Stevie Ray Web Design on Facebook:</label>
+                <textarea id="msgText" readonly></textarea>
+                <div class="copy-row">
+                  <button class="btn small" type="button" id="copyBtn">Copy message</button>
+                  <span class="copy-ok" id="copyOk">Copied — paste it into Messenger and hit send.</span>
+                </div>
+              </div>
+              <p class="form-hint">This form doesn't send anything by itself — it writes the message for you, so your info never goes anywhere until you paste it.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site">
+      <div class="wrap foot-grid">
+        <div>
+          <div class="foot-brand">Stevie Ray Web Design</div>
+          <div class="foot-meta">Websites for local businesses · Conroe, TX 77306<br />Free mockup first. $400 flat. You own it.</div>
+        </div>
+        <div class="foot-hours">
+          MON–SAT · 8 AM – 8 PM<br />
+          SUN · CLOSED
+        </div>
+      </div>
+    </footer>
+
+    <div class="sticky-bar" role="complementary" aria-label="Quick action">
+      <div class="sb-text"><strong>Free mockup</strong>See yours before you pay</div>
+      <a class="btn" href="#request">Get mine</a>
+    </div>
+
+    <script>
+      (function () {
+        var form = document.getElementById('mockupForm');
+        var out = document.getElementById('msgOut');
+        var msgText = document.getElementById('msgText');
+        var copyBtn = document.getElementById('copyBtn');
+        var copyOk = document.getElementById('copyOk');
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var biz = document.getElementById('f-biz').value.trim();
+          var trade = document.getElementById('f-trade').value;
+          var city = document.getElementById('f-city').value.trim();
+          var site = document.getElementById('f-site').value.trim();
+          var notes = document.getElementById('f-notes').value.trim();
+
+          var lines = [];
+          lines.push("Hey Stevie — I'd like to see a free mockup for my business.");
+          if (biz) lines.push('Business: ' + biz);
+          if (trade) lines.push('Type: ' + trade);
+          if (city) lines.push('City: ' + city);
+          if (site) lines.push('Current site: ' + site);
+          if (notes) lines.push('Notes: ' + notes);
+          if (!biz && !trade && !city) {
+            lines.push('(I\'ll fill in my details — ask me anything you need.)');
+          }
+          msgText.value = lines.join('\n');
+          out.classList.add('show');
+          copyOk.classList.remove('show');
+          out.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+
+        copyBtn.addEventListener('click', function () {
+          var done = function () { copyOk.classList.add('show'); };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(msgText.value).then(done, function () {
+              msgText.select();
+              try { document.execCommand('copy'); } catch (err) {}
+              done();
+            });
+          } else {
+            msgText.select();
+            try { document.execCommand('copy'); } catch (err) {}
+            done();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
